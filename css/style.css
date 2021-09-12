@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(24, 26, 27);
+    color: #fff;
+}
+
+.card {
+    width: 100%;
+    margin: auto;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 30%;
+    }
+}
