@@ -19,6 +19,14 @@ body {
     cursor: pointer;
 }
 
+.correct {
+    color: rgb(22, 177, 22);
+}
+
+.wrong {
+    color: rgb(230, 22, 22);
+}
+
 @media (min-width: 768px) {
     .card {
         width: 30%;
