@@ -12,6 +12,11 @@ body {
     margin: auto;
 }
 
+#list {
+    list-style-type: none;
+    color: black;
+}
+
 .list-group-item {
     padding: 1rem;
 }
