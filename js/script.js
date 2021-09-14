@@ -64,11 +64,11 @@ function dragStart() {
 }
 
 function dragEnter() {
-
+    this.classList.add('over');
 }
 
 function dragLeave() {
-
+    this.classList.remove('over');
 }
 
 function dragOver(e) {
