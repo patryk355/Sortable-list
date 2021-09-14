@@ -41,58 +41,44 @@ function randomList() {
     dragAndDropEvents();
 }
 
-
-
-
 randomList();
 
 const listItems = [...document.querySelectorAll('.list-group-item')];
 
 function checkList() {
-    values.forEach((value, index) => {
-        if (value === unsortedValues[index].value) {
-            listItems.forEach(li => {
-                if (+li.dataset.index === index) {
-                    li.classList.remove('wrong');
-                    li.classList.add('correct');
-                }
-            });
+    unsortedValues.forEach((unsortedValue, index) => {
+        const valueInLi = unsortedValue.innerText.trim();
+
+        if (valueInLi != values[index]) {
+            unsortedValue.classList.add('wrong');
         }
-        else if (value !== unsortedValues[index].value) {
-            listItems.forEach(li => {
-                if (+li.dataset.index === index) {
-                    li.classList.remove('correct');
-                    li.classList.add('wrong');
-                }
-            });
+        else {
+            unsortedValue.classList.remove('wrong');
+            unsortedValue.classList.add('correct');
         }
     })
 }
 
 function dragStart() {
-    // console.log('dragStart');
     startIndex = +this.closest('li').getAttribute('data-index');
 }
 
 function dragEnter() {
-    // console.log('dragEnter');
+
 }
 
 function dragLeave() {
-    // console.log('dragLeave');
+
 }
 
 function dragOver(e) {
     e.preventDefault();
-
-    // console.log('dragOver');
 }
 
 function drop() {
     const endIndex = +this.getAttribute('data-index');
 
     swapListItems(startIndex, endIndex);
-    // console.log('drop');
 }
 
 function swapListItems(startIndex, endIndex) {
