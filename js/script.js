@@ -99,11 +99,13 @@ function dragAndDropEvents() {
 
     draggables.forEach(draggable => {
         draggable.addEventListener('dragstart', dragStart);
+        draggable.addEventListener('touchstart', dragStart);
     })
 
     listItems.forEach((li) => {
         li.addEventListener('dragover', dragOver);
         li.addEventListener('drop', drop);
+        li.addEventListener('touchend', drop);
         li.addEventListener('dragenter', dragEnter);
         li.addEventListener('dragleave', dragLeave);
     })
